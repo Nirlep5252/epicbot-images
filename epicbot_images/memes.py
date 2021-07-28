@@ -1,5 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
-from utils import wrap_text
+from .utils import wrap_text
 
 font = ImageFont.truetype("assets/fonts/Roboto-Bold.ttf", size=30)
 
