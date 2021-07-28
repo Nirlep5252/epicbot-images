@@ -1,5 +1,7 @@
 include epicbot_images/assets/fonts/Roboto-Bold.ttf
 
 include epicbot_images/assets/meme_templates/drake.png
+include epicbot_images/assets/meme_templates/disappointed.png
 
 include epicbot_images/temp/drake.png
+include epicbot_images/temp/disappointed.png
