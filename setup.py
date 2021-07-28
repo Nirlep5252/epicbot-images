@@ -16,5 +16,6 @@ setup(
     license='MIT',
     description="An image manipulation module for EpicBot.",
     install_requires=['pillow>=8.1.2'],
-    python_requires='>=3.5.3'
+    python_requires='>=3.5.3',
+    include_package_data=True
 )
