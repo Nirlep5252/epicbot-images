@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from .utils import wrap_text
 
-templates = "assets\meme_templates"
+templates = ".\\assets\images\meme_templates"
 
 async def drake(first, second) -> bytes:
     """
@@ -10,7 +10,7 @@ async def drake(first, second) -> bytes:
     _f = wrap_text(15, first)
     _s = wrap_text(15, second)
     with Image.open(f"{templates}\drake.png") as _t:
-        font = ImageFont.truetype("assets\fonts\Roboto-Bold.ttf", size=30)
+        font = ImageFont.truetype("assets\\fonts\Roboto-Bold.ttf", size=30)
         t = _t.copy()
         draw = ImageDraw.Draw(t)
         draw.multiline_text(xy=(435, 150), text=_f, font=font, fill=(0, 0, 0), anchor='mm', align='center')
