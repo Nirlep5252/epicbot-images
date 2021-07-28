@@ -7,12 +7,12 @@ $ py -m pip install git+https://github.com/nirlep5252/epicbot-images
 # Usage
 
 ```py
-from epicbot-images.memes import drake
+from epicbot_images import memes
 
 # in your bot
 @bot.command()
 async def drake(first, second):
-    await ctx.reply(file=discord.File(await drake.make_image(first, second), filename='drake.png'))
+    await ctx.reply(file=discord.File(await memes.drake(first, second), filename='drake.png'))
 ```
 
 # ey i didnt test this yet use at ur own risk 

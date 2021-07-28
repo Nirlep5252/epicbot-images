@@ -3,7 +3,7 @@ from utils import wrap_text
 
 font = ImageFont.truetype("assets/fonts/Roboto-Bold.ttf", size=30)
 
-async def make_image(first, second) -> bytes:
+async def drake(first, second) -> bytes:
     """
     Makes a drake meme image using the `first` and `second` strings.
     """
