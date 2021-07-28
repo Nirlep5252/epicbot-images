@@ -1,3 +1,6 @@
+include README.md
+include LICENCE
+
 include epicbot_images/assets/fonts/Roboto-Bold.ttf
 
 include epicbot_images/assets/meme_templates/drake.png
