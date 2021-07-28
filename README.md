@@ -11,7 +11,7 @@ from epicbot_images import memes
 
 # in your bot
 @bot.command()
-async def drake(first, second):
+async def drake(ctx, first, second):
     await ctx.reply(file=discord.File(await memes.drake(first, second), filename='drake.png'))
 ```
 
