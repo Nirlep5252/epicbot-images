@@ -6,14 +6,23 @@ $ py -m pip install git+https://github.com/nirlep5252/epicbot-images
 
 # Usage
 
+### Memes:
 ```py
 from epicbot_images import memes
 
-# in your bot
+# somewhere else
 @bot.command()
 async def drake(ctx, first, second):
     await ctx.reply(file=discord.File(await memes.drake(first, second)))
+    # it's so easy to use
 ```
 
-# ey i didnt test this yet use at ur own risk 
-## ~ norlap
+#### I won't be making docs for these, refer to the source code or ask in the support server if you have any questions
+
+# Available meme templates
+
+- `drake`, `disappointed`
+
+# Links
+
+## [Support](https://discord.gg/Zj7h8Fp) | [Invite EpicBot](https://epic-bot.com/invite) | [Vote EpicBot](https://epic-bot.com/vote)
