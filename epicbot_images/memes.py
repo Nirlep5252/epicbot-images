@@ -11,8 +11,8 @@ async def drake(first, second) -> bytes:
     """
     _f = wrap_text(15, first)
     _s = wrap_text(15, second)
-    with Image.open(f"{current_path}\{templates}\drake.png") as _t:
-        font = ImageFont.truetype(f"{current_path}\\assets\\fonts\Roboto-Bold.ttf", size=30)
+    with Image.open(f"{current_path}/{templates}/drake.png") as _t:
+        font = ImageFont.truetype(f"{current_path}/assets/fonts/Roboto-Bold.ttf", size=30)
         t = _t.copy()
         draw = ImageDraw.Draw(t)
         draw.multiline_text(xy=(435, 150), text=_f, font=font, fill=(0, 0, 0), anchor='mm', align='center')
