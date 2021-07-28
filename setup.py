@@ -12,7 +12,7 @@ setup(
     name="epicbot-images",
     url="https://github.com/Nirlep5252/epicbot-images",
     version=version,
-    packages=['epicbot-images'],
+    packages=['epicbot_images'],
     license='MIT',
     description="An image manipulation module for EpicBot.",
     install_requires=['pillow>=8.1.2'],
