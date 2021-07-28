@@ -45,4 +45,23 @@ async def disappointed(first: str, second: str) -> str:
         t.save(save_path)
         return save_path
 
+async def flex_tape(first: str, second: str, username: str = None) -> str:
+    """
+    Makes the flex tape meme.
+    Put's the username as the flex tape guy if given, else leaves it empty.
+    """
+    _f = wrap_text(15, first)
+    _s = wrap_text(15, second)
+    _u = wrap_text(25, username)
+    with Image.open(f"{current_path}/{templates}/flex_tape.png") as _t:
+        t = _t.copy()
+        draw = ImageDraw.Draw(t)
+        draw.multiline_text((490, 150), _f, (255, 255, 255), font, 'mm', align='center')
+        draw.multiline_text((420, 500), _s, (255, 255, 255), font, 'mm', align='center')
+        if username is not None:
+            draw.multiline_text((200, 175), _u, (255, 255, 255), font, 'ms', align='center')
+        save_path = f"{current_path}/temp/flex_tape.png"
+        t.save(save_path)
+        return save_path
+
 # I will eat you >:3

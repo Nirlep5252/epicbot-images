@@ -10,3 +10,6 @@ def wrap_text(width, text) -> str:
     for _t in _t_list:
         t += f"{_t}\n"
     return t
+
+# this utilizes your mo-
+# :flint:
