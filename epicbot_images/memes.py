@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from .utils import wrap_text
 
-font = ImageFont.truetype("assets/fonts/Roboto-Bold.ttf", size=30)
+font = ImageFont.truetype("assets\\fonts\Roboto-Bold.ttf", size=30)
 templates = "assets\meme_templates"
 
 async def drake(first, second) -> bytes:
