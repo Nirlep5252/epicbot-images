@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from .utils import wrap_text
 
-templates = ".\\assets\\images\\meme_templates"
+templates = ".\\assets\\meme_templates"
 
 async def drake(first, second) -> bytes:
     """
