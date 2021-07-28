@@ -5,7 +5,7 @@ import pathlib
 templates = "assets/meme_templates"
 current_path = pathlib.Path(__file__).parent.resolve()
 
-async def drake(first, second) -> bytes:
+async def drake(first, second) -> str:
     """
     Makes a drake meme image using the `first` and `second` strings.
     """
@@ -17,4 +17,6 @@ async def drake(first, second) -> bytes:
         draw = ImageDraw.Draw(t)
         draw.multiline_text(xy=(435, 150), text=_f, font=font, fill=(0, 0, 0), anchor='mm', align='center')
         draw.multiline_text(xy=(435, 435), text=_s, font=font, fill=(0, 0, 0), anchor='mm', align='center')
-        return t.tobytes()
+        t.save(f"{current_path}/temp/drake.png")
+
+        return f"{current_path}/temp/drake.png"
