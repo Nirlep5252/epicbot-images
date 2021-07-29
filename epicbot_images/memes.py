@@ -117,15 +117,15 @@ async def panik(panic: str, kalm: str, panik: str) -> str:
         t.save(save_path)
         return save_path
 
-#Denz lol (will try to add stuff.. but one for trial purposes)
+# Denz lol (will try to add stuff.. but one for trial purposes)
 async def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
     """
     My Heart when...
     """
-    normal = wrap_text(15, normal)
-    slight_panic = wrap_text(15, slight_panic)
-    ultra_panic = wrap_text(15, ultra_panic)
-    f = font(20)
+    normal = wrap_text(10, normal)
+    slight_panic = wrap_text(10, slight_panic)
+    ultra_panic = wrap_text(10, ultra_panic)
+    f = font(10)
     with Image.open(f"{current_path}/{templates}/my_heart.png") as _t:
         t = _t.copy()
         draw = ImageDraw.Draw(t)
