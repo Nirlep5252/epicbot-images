@@ -95,7 +95,6 @@ async def doge(first: str, second: str) -> str:
         t.save(save_path)
         return save_path
 
-
 async def panik(panic: str, kalm: str, panik: str) -> str:
     """
     Panic... Kalm... PANIKK!!!
