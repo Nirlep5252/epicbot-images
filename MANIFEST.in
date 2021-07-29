@@ -9,6 +9,7 @@ include epicbot_images/assets/meme_templates/flex_tape.png
 include epicbot_images/assets/meme_templates/bernie.png
 include epicbot_images/assets/meme_templates/doge.png
 include epicbot_images/assets/meme_templates/panik.png
+include epicbot_images/assets/meme_templates/my_heart.png
 
 include epicbot_images/temp/drake.png
 include epicbot_images/temp/disappointed.png
@@ -16,3 +17,4 @@ include epicbot_images/temp/flex_tape.png
 include epicbot_images/temp/bernie.png
 include epicbot_images/temp/doge.png
 include epicbot_images/temp/panik.png
+include epicbot_images/temp/my_heart.png
