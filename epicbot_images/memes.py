@@ -122,10 +122,10 @@ async def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
     """
     My Heart when...
     """
-    normal = wrap_text(10, normal)
-    slight_panic = wrap_text(10, slight_panic)
-    ultra_panic = wrap_text(10, ultra_panic)
-    f = font(10)
+    normal = wrap_text(15, normal)
+    slight_panic = wrap_text(15, slight_panic)
+    ultra_panic = wrap_text(15, ultra_panic)
+    f = font(12)
     with Image.open(f"{current_path}/{templates}/my_heart.png") as _t:
         t = _t.copy()
         draw = ImageDraw.Draw(t)
