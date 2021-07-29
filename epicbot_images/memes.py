@@ -95,6 +95,7 @@ async def doge(first: str, second: str) -> str:
         t.save(save_path)
         return save_path
 
+
 async def panik(panic: str, kalm: str, panik: str) -> str:
     """
     Panic... Kalm... PANIKK!!!
@@ -112,4 +113,23 @@ async def panik(panic: str, kalm: str, panik: str) -> str:
         t.save(save_path)
         return save_path
 
+#Denz lol (will try to add stuff.. but one for trial purposes)
+async def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
+    """
+    My Heart when...
+    """
+    normal = wrap_text(15, normal)
+    slight_panic = wrap_text(15, slight_panic)
+    ultra_panic = wrap_text(15, ultra_panic)
+    with Image.open(f"{current_path}/{templates}/my_heart.png") as _t:
+        t = _t.copy()
+        draw = ImageDraw.Draw(t)
+        draw.multiline_text((69, 69), normal, (0, 0, 0), font(), 'mm', align='center')
+        draw.multiline_text((69, 144), slight_panic, (0, 0, 0), font(), 'mm', align='center')
+        draw.multiline_text((69, 212), ultra_panic, (0, 0, 0), font(), 'mm', align='center')
+        save_path = f"{current_path}/temp/my_heart.png"
+        t.save(save_path)
+        return save_path
+
 # I will eat you >:3
+# No u
