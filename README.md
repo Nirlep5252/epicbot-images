@@ -25,7 +25,7 @@ async def drake(ctx, first, second):
 
 # Available meme templates
 
-- `drake`, `disappointed`, `flex_tape`, `bernie`
+- `drake`, `disappointed`, `flex_tape`, `bernie`, `panik`, `doge`
 
 # Links
 
