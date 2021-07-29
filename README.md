@@ -1,7 +1,7 @@
 # Install
 
 ```
-$ py -m pip install -U git+https://github.com/nirlep5252/epicbot-images
+$ pip install epicbot-images
 ```
 
 # Usage
@@ -10,8 +10,10 @@ $ py -m pip install -U git+https://github.com/nirlep5252/epicbot-images
 ```py
 from epicbot_images import memes
 
+
 # somewhere else
-# this example is for discord bots, but `memes.drake()` returns a path to the final image output,
+# this example is for discord bots,
+# but `memes.drake()` returns a path to the final image output,
 # you can use this in any python app you want, not limited to discord bots.
 @bot.command()
 async def drake(ctx, first, second):
@@ -23,7 +25,7 @@ async def drake(ctx, first, second):
 
 # Available meme templates
 
-- `drake`, `disappointed`, `flex_tape`
+- `drake`, `disappointed`, `flex_tape`, `bernie`
 
 # Links
 

@@ -64,4 +64,17 @@ async def flex_tape(first: str, second: str, username: str = None) -> str:
         t.save(save_path)
         return save_path
 
+async def bernie(text: str) -> str:
+    """
+    Makes the bernie meme, "I am once again asking for...".
+    """
+    _e = wrap_text(30, text)
+    with Image.open(f"{current_path}/{templates}/bernie.png") as _t:
+        t = _t.copy()
+        draw = ImageDraw.Draw(t)
+        draw.multiline_text((350, 670), _e, (255, 255, 255), font, 'ms', align='center')
+        save_path = f"{current_path}/temp/bernie.png"
+        t.save(save_path)
+        return save_path
+
 # I will eat you >:3
