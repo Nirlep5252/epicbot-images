@@ -1,5 +1,6 @@
 from textwrap import TextWrapper
 
+
 def wrap_text(width, text) -> str:
     """
     Making it so that the text doesn't flow outside the image by adding a bunch of `\n`s.

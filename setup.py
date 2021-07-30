@@ -5,7 +5,6 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-version = ''
 with open('epicbot_images/__init__.py') as f:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
 

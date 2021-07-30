@@ -1,6 +1,6 @@
 # Install
 
-```
+```shell
 $ pip install epicbot-images
 ```
 
@@ -10,23 +10,28 @@ $ pip install epicbot-images
 ```py
 from epicbot_images import memes
 
-
-# somewhere else
-# this example is for discord bots,
-# but `memes.drake()` returns a path to the final image output,
-# you can use this in any python app you want, not limited to discord bots.
+# for a discord bot
 @bot.command()
 async def drake(ctx, first, second):
     await ctx.reply(file=discord.File(await memes.drake(first, second)))
     # it's so easy to use
 ```
+### Filters:
+```py
+from epicbot_images import effects
+
+@bot.command()
+async def blur(ctx, user: discord.User):
+    await ctx.reply(file=discord.File(await effects.blur(await user.avatar.read())))
+    # 1 line go brr
+```
 
 #### I won't be making docs for these, refer to the source code or ask in the support server if you have any questions
 
-# Available meme templates
-
+## Meme templates
 - `drake`, `disappointed`, `flex_tape`, `bernie`, `panik`, `doge`, `my_heart`
+## Effects
+- `blur`
 
 # Links
-
 ## [Support](https://discord.gg/Zj7h8Fp) | [Invite EpicBot](https://epic-bot.com/invite) | [Vote EpicBot](https://epic-bot.com/vote)

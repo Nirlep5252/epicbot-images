@@ -14,8 +14,10 @@ import pathlib
 templates = "assets/meme_templates"
 current_path = pathlib.Path(__file__).parent.resolve()
 
+
 def font(size: int = 30, fontname: str = 'Roboto-Bold'):
     return ImageFont.truetype(f"{current_path}/assets/fonts/{fontname}.ttf", size=size)
+
 
 async def drake(first: str, second: str) -> str:
     """
@@ -33,6 +35,7 @@ async def drake(first: str, second: str) -> str:
         t.save(save_path)
         return save_path
 
+
 async def disappointed(first: str, second: str) -> str:
     """
     Makes the disappointed meme image where the guy becomes excited but then gets disappointed again.
@@ -48,6 +51,7 @@ async def disappointed(first: str, second: str) -> str:
         save_path = f"{current_path}/temp/disappointed.png"
         t.save(save_path)
         return save_path
+
 
 async def flex_tape(first: str, second: str, username: str = None) -> str:
     """
@@ -70,6 +74,7 @@ async def flex_tape(first: str, second: str, username: str = None) -> str:
         t.save(save_path)
         return save_path
 
+
 async def bernie(text: str) -> str:
     """
     Makes the bernie meme, "I am once again asking for...".
@@ -82,6 +87,7 @@ async def bernie(text: str) -> str:
         save_path = f"{current_path}/temp/bernie.png"
         t.save(save_path)
         return save_path
+
 
 async def doge(first: str, second: str) -> str:
     """
@@ -99,23 +105,25 @@ async def doge(first: str, second: str) -> str:
         t.save(save_path)
         return save_path
 
-async def panik(panic: str, kalm: str, panik: str) -> str:
+
+async def panik(panic: str, kalm: str, panik_: str) -> str:
     """
     Panic... Kalm... PANIKK!!!
     """
     panic = wrap_text(15, panic)
     kalm = wrap_text(15, kalm)
-    panik = wrap_text(15, panik)
+    panik_ = wrap_text(15, panik_)
     f = font()
     with Image.open(f"{current_path}/{templates}/panik.png") as _t:
         t = _t.copy()
         draw = ImageDraw.Draw(t)
         draw.multiline_text((133, 133), panic, (0, 0, 0), f, 'mm', align='center')
         draw.multiline_text((133, 435), kalm, (0, 0, 0), f, 'mm', align='center')
-        draw.multiline_text((133, 730), panik, (0, 0, 0), f, 'mm', align='center')
+        draw.multiline_text((133, 730), panik_, (0, 0, 0), f, 'mm', align='center')
         save_path = f"{current_path}/temp/panik.png"
         t.save(save_path)
         return save_path
+
 
 # Denz lol (will try to add stuff.. but one for trial purposes)
 async def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
