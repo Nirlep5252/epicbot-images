@@ -16,7 +16,7 @@ async def drake(ctx, first, second):
     await ctx.reply(file=discord.File(await memes.drake(first, second)))
     # it's so easy to use
 ```
-### Filters:
+### Effects:
 ```py
 from epicbot_images import effects
 
