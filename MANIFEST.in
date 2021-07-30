@@ -19,3 +19,6 @@ include epicbot_images/temp/doge.png
 include epicbot_images/temp/panik.png
 include epicbot_images/temp/my_heart.png
 include epicbot_images/temp/blur.png
+include epicbot_images/temp/flip.png
+include epicbot_images/temp/rotate.png
+include epicbot_images/temp/enhance.png
