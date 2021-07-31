@@ -3,3 +3,4 @@ epicbot_images.egg-info
 dist
 build
 .idea
+test.py

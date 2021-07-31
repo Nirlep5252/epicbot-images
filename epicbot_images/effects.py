@@ -4,9 +4,11 @@ Adds amazing filters to images.
 
 from PIL import Image, ImageFilter, ImageEnhance
 from io import BytesIO
+from .utils import resize_image, convert_image_to_grayscale
 import pathlib
 
 current_path = pathlib.Path(__file__).parent.resolve()
+ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
 
 async def blur(image: bytes, radius: int = 2) -> str:
@@ -68,3 +70,14 @@ async def enhance(image: bytes, **options) -> str:
         save_path = f"{current_path}/temp/enhance.png"
         e.save(save_path)
         return save_path
+
+
+async def ascii(image: bytes, width: int = 50) -> str:
+    """
+    Converts your image to ascii. Pretty dope.
+    """
+    with Image.open(BytesIO(image)) as e:
+        e = convert_image_to_grayscale(resize_image(e, width))
+        pixels = e.getdata()
+        chars = "".join([ASCII_CHARS[pixel // 25] for pixel in pixels])
+        return "\n".join([chars[index: (index + width)] for index in range(0, len(chars), width)])
