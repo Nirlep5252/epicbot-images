@@ -81,3 +81,14 @@ async def ascii(image: bytes, width: int = 50) -> str:
         pixels = e.getdata()
         chars = "".join([ASCII_CHARS[pixel // 25] for pixel in pixels])
         return "\n".join([chars[index: (index + width)] for index in range(0, len(chars), width)])
+
+
+async def blend(img1: bytes, img2: bytes) -> str:
+    """
+    Blends both of these images.
+    """
+    with Image.open(BytesIO(img1)) as im1, Image.open(BytesIO(img2)) as im2:
+        e = Image.blend(im1, im2, 0.5)
+        save_path = f"{current_path}/temp/blend.png"
+        e.save(save_path)
+        return save_path

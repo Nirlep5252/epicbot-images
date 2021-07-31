@@ -31,7 +31,7 @@ async def blur(ctx, user: discord.User):
 ## Meme templates
 - `drake`, `disappointed`, `flex_tape`, `bernie`, `panik`, `doge`, `my_heart`
 ## Effects
-- `blur`, `flip`, `rotate`, `enhance`
+- `blur`, `flip`, `rotate`, `enhance`, `ascii`
 
 # Links
 ## [Support](https://discord.gg/Zj7h8Fp) | [Invite EpicBot](https://epic-bot.com/invite) | [Vote EpicBot](https://epic-bot.com/vote)
