@@ -105,9 +105,10 @@ async def wave(img: bytes) -> str:
     with WandImage(blob=BytesIO(img)) as im:
         crewmate = WandImage()
         for hm in range(-32, 32):
-            impostor = im.clone()
-            impostor.wave(im.height / hm, im.width / (hm/8))
-            crewmate.sequence.append(impostor)
+            if hm != 0:
+                impostor = im.clone()
+                impostor.wave(im.height / hm, im.width / (hm/8))
+                crewmate.sequence.append(impostor)
         save_path = f"{current_path}/temp/wave.gif"
         crewmate.save(filename=save_path)
         return save_path
