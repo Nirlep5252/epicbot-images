@@ -102,7 +102,7 @@ async def wave(img: bytes) -> str:
     USE AT YOUR OWN RISKK!!!!
     MIGHT CRASH UR BOT!
     """
-    with WandImage(BytesIO(img)) as im:
+    with WandImage(blob=BytesIO(img)) as im:
         crewmate = WandImage()
         for hm in range(-32, 32):
             impostor = im.clone()
