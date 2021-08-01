@@ -98,17 +98,19 @@ async def blend(img1: bytes, img2: bytes) -> str:
 
 async def wave(img: bytes) -> str:
     """
-    INCOMPLETE!!!
-    USE AT YOUR OWN RISKK!!!!
-    MIGHT CRASH UR BOT!
+    Makes a wave gif effect from the image.
+    Recommended to use smol images, cuz it'll take a long time for big images.
     """
     with WandImage(blob=BytesIO(img)) as im:
         crewmate = WandImage()
-        for hm in range(-32, 32):
+        frames = []
+        for hm in range(-12, 12):
             if hm != 0:
                 impostor = im.clone()
-                impostor.wave(im.height / hm, im.width / (hm/8))
-                crewmate.sequence.append(impostor)
+                impostor.wave(im.height / 32, im.width / (hm / 1.5))
+                frames.append(impostor)
+        frames.append(frames[::-1])
+        crewmate.sequence.extend(frames)
         save_path = f"{current_path}/temp/wave.gif"
         crewmate.save(filename=save_path)
         return save_path
