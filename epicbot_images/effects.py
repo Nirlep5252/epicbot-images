@@ -3,6 +3,7 @@ Adds amazing filters to images.
 """
 
 from PIL import Image, ImageFilter, ImageEnhance
+from wand.image import Image as WandImage
 from io import BytesIO
 from .utils import resize_image, convert_image_to_grayscale
 import pathlib
@@ -88,7 +89,25 @@ async def blend(img1: bytes, img2: bytes) -> str:
     Blends both of these images.
     """
     with Image.open(BytesIO(img1)) as im1, Image.open(BytesIO(img2)) as im2:
+        im2 = im2.resize(im1.size)
         e = Image.blend(im1, im2, 0.5)
         save_path = f"{current_path}/temp/blend.png"
         e.save(save_path)
+        return save_path
+
+
+async def wave(img: bytes) -> str:
+    """
+    INCOMPLETE!!!
+    USE AT YOUR OWN RISKK!!!!
+    MIGHT CRASH UR BOT!
+    """
+    with WandImage(BytesIO(img)) as im:
+        crewmate = WandImage()
+        for hm in range(-32, 32):
+            impostor = im.clone()
+            impostor.wave(im.height / hm, im.width / (hm/8))
+            crewmate.sequence.append(impostor)
+        save_path = f"{current_path}/temp/wave.gif"
+        crewmate.save(filename=save_path)
         return save_path
