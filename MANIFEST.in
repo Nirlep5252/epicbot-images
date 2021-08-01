@@ -22,4 +22,4 @@ include epicbot_images/temp/blur.png
 include epicbot_images/temp/flip.png
 include epicbot_images/temp/rotate.png
 include epicbot_images/temp/enhance.png
-include epicbot_images/temp/wave.gif
+include epicbot_images/temp/wiggle.gif
