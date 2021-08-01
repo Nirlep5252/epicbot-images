@@ -109,7 +109,7 @@ async def wave(img: bytes) -> str:
                 impostor = im.clone()
                 impostor.wave(im.height / 32, im.width / (hm / 1.5))
                 frames.append(impostor)
-        frames.append(frames[::-1])
+        frames.extend(frames[::-1])
         crewmate.sequence.extend(frames)
         save_path = f"{current_path}/temp/wave.gif"
         crewmate.save(filename=save_path)
