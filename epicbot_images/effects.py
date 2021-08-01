@@ -5,6 +5,7 @@ Adds amazing filters to images.
 from PIL import Image, ImageFilter, ImageEnhance
 from wand.image import Image as WandImage
 from wand.color import Color as WandColor
+from functools import cache
 from io import BytesIO
 from .utils import resize_image, convert_image_to_grayscale
 import pathlib
@@ -13,6 +14,7 @@ current_path = pathlib.Path(__file__).parent.resolve()
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
 
+@cache
 async def blur(image: bytes, radius: int = 2) -> str:
     """
     Blurs the image.
@@ -25,6 +27,7 @@ async def blur(image: bytes, radius: int = 2) -> str:
         return save_path
 
 
+@cache
 async def flip(image: bytes, horizontal: bool = True, vertical: bool = False) -> str:
     """
     Flips the image.
@@ -41,6 +44,7 @@ async def flip(image: bytes, horizontal: bool = True, vertical: bool = False) ->
         return save_path
 
 
+@cache
 async def rotate(image: bytes, degrees: int = 90) -> str:
     """
     Rotates your cute face UwU!~
@@ -52,6 +56,7 @@ async def rotate(image: bytes, degrees: int = 90) -> str:
         return save_path
 
 
+@cache
 async def enhance(image: bytes, **options) -> str:
     """
     Enhances the image based on the options.
@@ -74,6 +79,7 @@ async def enhance(image: bytes, **options) -> str:
         return save_path
 
 
+@cache
 async def ascii(image: bytes, width: int = 50) -> str:
     """
     Converts your image to ascii. Pretty dope.
@@ -85,6 +91,7 @@ async def ascii(image: bytes, width: int = 50) -> str:
         return "\n".join([chars[index: (index + width)] for index in range(0, len(chars), width)])
 
 
+@cache
 async def blend(img1: bytes, img2: bytes) -> str:
     """
     Blends both of these images.
@@ -97,6 +104,7 @@ async def blend(img1: bytes, img2: bytes) -> str:
         return save_path
 
 
+@cache
 async def wiggle(img: bytes) -> str:
     """
     Makes a wiggle gif effect from the image.
