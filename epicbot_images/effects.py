@@ -97,7 +97,7 @@ async def blend(img1: bytes, img2: bytes) -> str:
         return save_path
 
 
-async def wiggle(img: bytes) -> str:
+def wiggle(img: bytes) -> str:
     """
     Makes a wiggle gif effect from the image.
     Recommended to use smol images, cuz it'll take a long time for big images.
