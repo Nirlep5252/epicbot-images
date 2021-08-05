@@ -19,7 +19,7 @@ def font(size: int = 30, fontname: str = 'Roboto-Bold'):
     return ImageFont.truetype(f"{current_path}/assets/fonts/{fontname}.ttf", size=size)
 
 
-async def drake(first: str, second: str) -> str:
+def drake(first: str, second: str) -> str:
     """
     Makes a drake meme image using the `first` and `second` strings.
     """
@@ -36,7 +36,7 @@ async def drake(first: str, second: str) -> str:
         return save_path
 
 
-async def disappointed(first: str, second: str) -> str:
+def disappointed(first: str, second: str) -> str:
     """
     Makes the disappointed meme image where the guy becomes excited but then gets disappointed again.
     """
@@ -53,7 +53,7 @@ async def disappointed(first: str, second: str) -> str:
         return save_path
 
 
-async def flex_tape(first: str, second: str, username: str = None) -> str:
+def flex_tape(first: str, second: str, username: str = None) -> str:
     """
     Makes the flex tape meme.
     Put's the username as the flex tape guy if given, else leaves it empty.
@@ -75,7 +75,7 @@ async def flex_tape(first: str, second: str, username: str = None) -> str:
         return save_path
 
 
-async def bernie(text: str) -> str:
+def bernie(text: str) -> str:
     """
     Makes the bernie meme, "I am once again asking for...".
     """
@@ -89,7 +89,7 @@ async def bernie(text: str) -> str:
         return save_path
 
 
-async def doge(first: str, second: str) -> str:
+def doge(first: str, second: str) -> str:
     """
     Makes the doge meme.
     """
@@ -106,7 +106,7 @@ async def doge(first: str, second: str) -> str:
         return save_path
 
 
-async def panik(panic: str, kalm: str, panik_: str) -> str:
+def panik(panic: str, kalm: str, panik_: str) -> str:
     """
     Panic... Kalm... PANIKK!!!
     """
@@ -126,7 +126,7 @@ async def panik(panic: str, kalm: str, panik_: str) -> str:
 
 
 # Denz lol (will try to add stuff.. but one for trial purposes)
-async def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
+def my_heart(normal: str, slight_panic: str, ultra_panic: str) -> str:
     """
     My Heart when...
     """

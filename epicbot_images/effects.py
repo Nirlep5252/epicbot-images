@@ -13,7 +13,7 @@ current_path = pathlib.Path(__file__).parent.resolve()
 ASCII_CHARS = ["@", "#", "S", "%", "?", "*", "+", ";", ":", ",", "."]
 
 
-async def blur(image: bytes, radius: int = 2) -> str:
+def blur(image: bytes, radius: int = 2) -> str:
     """
     Blurs the image.
     This might crash if the radius is too big, just like your mom.
@@ -25,7 +25,7 @@ async def blur(image: bytes, radius: int = 2) -> str:
         return save_path
 
 
-async def flip(image: bytes, horizontal: bool = True, vertical: bool = False) -> str:
+def flip(image: bytes, horizontal: bool = True, vertical: bool = False) -> str:
     """
     Flips the image.
 
@@ -41,7 +41,7 @@ async def flip(image: bytes, horizontal: bool = True, vertical: bool = False) ->
         return save_path
 
 
-async def rotate(image: bytes, degrees: int = 90) -> str:
+def rotate(image: bytes, degrees: int = 90) -> str:
     """
     Rotates your cute face UwU!~
     """
@@ -52,7 +52,7 @@ async def rotate(image: bytes, degrees: int = 90) -> str:
         return save_path
 
 
-async def enhance(image: bytes, **options) -> str:
+def enhance(image: bytes, **options) -> str:
     """
     Enhances the image based on the options.
     """
@@ -74,7 +74,7 @@ async def enhance(image: bytes, **options) -> str:
         return save_path
 
 
-async def ascii(image: bytes, width: int = 50) -> str:
+def ascii(image: bytes, width: int = 50) -> str:
     """
     Converts your image to ascii. Pretty dope.
     """
@@ -85,7 +85,7 @@ async def ascii(image: bytes, width: int = 50) -> str:
         return "\n".join([chars[index: (index + width)] for index in range(0, len(chars), width)])
 
 
-async def blend(img1: bytes, img2: bytes) -> str:
+def blend(img1: bytes, img2: bytes) -> str:
     """
     Blends both of these images.
     """
