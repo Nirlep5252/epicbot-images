@@ -3,8 +3,6 @@ Adds amazing filters to images.
 """
 
 from PIL import Image, ImageFilter, ImageEnhance
-from wand.image import Image as WandImage
-from wand.color import Color as WandColor
 from io import BytesIO
 from .utils import resize_image, convert_image_to_grayscale
 import pathlib
@@ -94,25 +92,4 @@ def blend(img1: bytes, img2: bytes) -> str:
         e = Image.blend(im1, im2, 0.5)
         save_path = f"{current_path}/temp/blend.png"
         e.save(save_path)
-        return save_path
-
-
-def wiggle(img: bytes) -> str:
-    """
-    Makes a wiggle gif effect from the image.
-    Recommended to use smol images, cuz it'll take a long time for big images.
-    """
-    with WandImage(blob=BytesIO(img)) as im:
-        crewmate = WandImage()
-        frames = []
-        for hm in range(-12, 12):
-            if hm != 0:
-                impostor = im.clone()
-                impostor.background_color = WandColor('#36393f')
-                impostor.wave(im.height / 32, im.width / (hm / 1.5))
-                frames.append(impostor)
-        frames.extend(frames[::-1])
-        crewmate.sequence.extend(frames)
-        save_path = f"{current_path}/temp/wiggle.gif"
-        crewmate.save(filename=save_path)
         return save_path
